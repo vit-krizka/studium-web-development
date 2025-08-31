@@ -1,1 +1,1 @@
-# studium-web-development
+# Studium full stack developer
