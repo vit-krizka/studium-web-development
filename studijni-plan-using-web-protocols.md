@@ -264,7 +264,7 @@ app.get("/stream", (req,res)=>{
 
 ---
 
-## DOPORUČENÁ ROZŠÍŘENÍ (BLOK 5 – volitelné)
+## MOŽNÁ ROZŠÍŘENÍ
 ### Bezpečnost & spolehlivost
 - **HTTPS/TLS:** certifikační řetěz, OCSP stapling, HSTS, PFS.
 - **Rate limiting** (`429`, `Retry-After`), **timeout budget**, **circuit breaker**, **hedging** požadavků.
@@ -277,37 +277,6 @@ app.get("/stream", (req,res)=>{
 ### Observabilita
 - Strukturované logy, **Correlation/Trace‑ID**, OpenTelemetry, export do Jaeger/Tempo.
 - **Problem Details** (`application/problem+json`) jako standard pro chyby API.
-
----
-
-## Praktické dovednosti – výstu py (checklisty)
-**Po BLOKU 1 umím:**
-- [ ] Přečíst start‑line/hlavičky/tělo v DevTools a `curl -v`.
-- [ ] Vysvětlit rozdíly HTTP/1.1 vs. HTTP/2 vs. HTTP/3.
-- [ ] Vytvořit HAR a interpretovat TTFB/LCP (základně).
-
-**Po BLOKU 2 umím:**
-- [ ] Použít `Etag`/`If-None-Match`, rozlišit `301/302/307/308`.
-- [ ] Vyřešit CORS preflight a nastavit `Vary`.
-- [ ] Rozlišit `PUT` vs. `PATCH` a navrhnout idempotentní API.
-
-**Po BLOKU 3 umím:**
-- [ ] Správně zvolit `Content-Type`/`Content-Encoding`.
-- [ ] Bezpečně nastavit cookie (`HttpOnly`, `Secure`, `SameSite`).
-- [ ] Odeslat formulář/multipart upload přes `curl` a zpracovat na serveru.
-
-**Po BLOKU 4 umím:**
-- [ ] Implementovat long polling se správným timeoutem a backoffem.
-- [ ] Spustit SSE stream s heartbeatem a obnovením po výpadku.
-- [ ] Napsat jednoduchý WebSocket chat a řešit ping/pong.
-
----
-
-## Doporučená cvičení „end‑to‑end“
-1. **Mini API + klient:** Napište API (Express) s CRUD, ETag, 429 rate‑limit, CORS. Klientem testujte přes `httpie` a Postman.
-2. **Streaming feed:** Implementujte SSE ticker, klient se automaticky připojuje po výpadku a loguje `Last-Event-ID`.
-3. **Upload velkého souboru:** Multipart upload s ověřením checksumu a stavovou obnovou (resume) — navrhněte protokol.
-4. **Observabilita:** Zaveďte Correlation‑ID (např. `X-Request-ID`) a dohledatelný průchod logy skrz reverse proxy.
 
 ---
 
